@@ -6,7 +6,7 @@ variable "environment" {
   type        = string
 }
 
-variable "component" {
+variable "sg_name" {
   type        = string
 }
 
