@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    terraform = {
-      source  = "builtin/terraform"
-      version = ""
-    }
-  }
-}
 resource "aws_instance" "mongodb" {
   ami           = local.ami_id
   instance_type = "t3.micro"
@@ -26,8 +18,15 @@ resource "terraform_data" "mongodb" {
     user        = "ec2-user"
     password    = "DevOps321"
   }
+  provisioner "file" {
+    source      = "bootstrap.sh"
+    destination = "/tmp/bootstrap.sh"
+  }
 
   provisioner "remote-exec" {
-
+    inline = [
+      "chmod +x /tmp/bootstrap.sh",
+      "sudo sh /tmp/bootstrap.sh mongodb ${var.environment}"
+    ]
   }
 }
