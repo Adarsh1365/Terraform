@@ -2,6 +2,18 @@ data "aws_ssm_parameter" "mongodb_sg" {
   name = "/${var.project}/${var.environment}/sg/mongodb"
 }
 
+data "aws_ssm_parameter" "redis_sg" {
+  name = "/${var.project}/${var.environment}/sg/redis"
+}
+
+data "aws_ssm_parameter" "rabbitmq_sg" {
+  name = "/${var.project}/${var.environment}/sg/rabbitmq"
+}
+
+data "aws_ssm_parameter" "mysql_sg" {
+  name = "/${var.project}/${var.environment}/sg/mysql"
+}
+
 data "aws_ssm_parameter" "database_subnets" {
   name = "/${var.project}/${var.environment}/Database-Subnets"
 }
