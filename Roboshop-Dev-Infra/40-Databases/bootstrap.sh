@@ -10,6 +10,6 @@ touch /var/log/roboshop/ansible.log
 
 cd /home/ec2-user
 git clone https://github.com/Adarsh1365/Ansible.git
-cd roboshop-ansible-v4
+cd Ansible/roboshop-ansible-v4
 git pull
 ansible-playbook -e component=${component} -e env=${environment} Configure_Instance.yaml
