@@ -12,4 +12,4 @@ cd /home/ec2-user
 git clone https://github.com/Adarsh1365/Ansible.git
 cd roboshop-ansible-v4
 git pull
-ansible-playbook -e component=${component} -e env=${environment}
+ansible-playbook -e component=${component} -e env=${environment} Configure_Instance.yaml
