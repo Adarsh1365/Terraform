@@ -9,7 +9,7 @@ chmod -R 755 /var/log/roboshop
 touch /var/log/roboshop/ansible.log
 
 cd /home/ec2-user
-git pull https://github.com/Adarsh1365/Ansible.git
+git clone https://github.com/Adarsh1365/Ansible.git
 cd roboshop-ansible-v4
 git pull
 ansible-playbook -e component=${component} -e env=${environment}
